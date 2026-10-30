@@ -1,0 +1,3029 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yahya Benhaimoud | Portfolio - Futur Ingénieur Data Science & Intelligence Artificielle</title>
+  <meta name="description" content="Portfolio de Yahya Benhaimoud - Futur Ingénieur en Data Science et Intelligence Artificielle à l'EMSI Casablanca. Expériences chez SAFRAN, OCP, Coin Outils.">
+  <meta name="author" content="Yahya Benhaimoud">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='46' fill='%2338bdf8'>YB</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            },
+            accent: {
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+            emerald: {
+              400: '#34d399',
+              500: '#10b981',
+            },
+            dark: {
+              bg: '#090d16',
+              card: '#0f172a',
+              border: '#1e293b',
+            }
+          },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js for Live Data/AI Demo -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+
+    /* Glassmorphism */
+    .glass {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .light .glass {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .glass-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.2);
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-badge {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    /* Background Mesh Glow */
+    .glow-mesh {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 font-sans antialiased selection:bg-primary-500 selection:text-white transition-colors duration-300 relative overflow-x-hidden">
+
+  <!-- Background decorative glows -->
+  <div class="glow-mesh bg-sky-500 top-[-100px] left-[-150px]"></div>
+  <div class="glow-mesh bg-indigo-500 top-[35%] right-[-150px]"></div>
+  <div class="glow-mesh bg-emerald-500 bottom-[10%] left-[-100px]"></div>
+
+  <!-- Interactive Canvas Particles (Background) -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-primary-600 via-indigo-600 to-purple-600 p-[2px] shadow-lg shadow-primary-500/20 group-hover:shadow-primary-500/40 transition">
+            <div class="w-full h-full bg-[#090d16] rounded-[10px] flex items-center justify-center font-mono font-bold text-lg text-primary-400 group-hover:text-white transition">
+              YB
+            </div>
+          </div>
+          <div>
+            <span class="text-lg font-bold tracking-tight text-white group-hover:text-primary-400 transition">Yahya Benhaimoud</span>
+            <span class="block text-xs font-mono text-slate-400">EMSI Casablanca • Data & IA</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="#about" class="hover:text-primary-400 transition" data-i18n="nav.about">À propos</a>
+          <a href="#experience" class="hover:text-primary-400 transition" data-i18n="nav.experience">Expériences</a>
+          <a href="#projects" class="hover:text-primary-400 transition" data-i18n="nav.projects">Projets</a>
+          <a href="#ai-demo" class="hover:text-primary-400 transition flex items-center gap-1.5 text-primary-400 font-semibold">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+            </span>
+            <span data-i18n="nav.demo">Démo IA Live</span>
+          </a>
+          <a href="#skills" class="hover:text-primary-400 transition" data-i18n="nav.skills">Compétences</a>
+          <a href="#education" class="hover:text-primary-400 transition" data-i18n="nav.education">Formation</a>
+          <a href="#contact" class="hover:text-primary-400 transition" data-i18n="nav.contact">Contact</a>
+        </div>
+
+        <!-- Right Action Controls -->
+        <div class="hidden sm:flex items-center gap-3">
+          <!-- Language Toggle Button -->
+          <button id="lang-toggle-btn" class="px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 text-xs font-mono text-slate-300 hover:text-white hover:border-primary-400 transition flex items-center gap-1">
+            <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+            <span id="current-lang-text">FR</span>
+          </button>
+
+          <!-- Download CV Button -->
+          <a href="CV_Benhaimoud_Yahya.pdf" download="CV_Benhaimoud_Yahya.pdf" class="px-4 py-2 rounded-xl bg-gradient-to-r from-primary-500 to-indigo-600 text-white text-xs font-semibold shadow-md shadow-primary-500/25 hover:shadow-primary-500/40 hover:scale-[1.02] active:scale-[0.98] transition flex items-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span data-i18n="nav.downloadCv">Télécharger CV</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="lg:hidden flex items-center gap-2">
+          <a href="CV_Benhaimoud_Yahya.pdf" download="CV_Benhaimoud_Yahya.pdf" class="p-2 rounded-lg bg-primary-500/20 text-primary-400 sm:hidden">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </a>
+          <button id="mobile-menu-btn" class="p-2.5 rounded-lg border border-slate-800 text-slate-300 hover:text-white bg-slate-900/60 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-800 bg-[#0c1220]/95 backdrop-blur-xl px-6 py-6 space-y-4">
+      <a href="#about" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.about">À propos</a>
+      <a href="#experience" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.experience">Expériences</a>
+      <a href="#projects" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.projects">Projets</a>
+      <a href="#ai-demo" class="block text-primary-400 font-semibold py-2 mobile-nav-link" data-i18n="nav.demo">Démo IA Live</a>
+      <a href="#skills" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.skills">Compétences</a>
+      <a href="#education" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.education">Formation</a>
+      <a href="#contact" class="block text-slate-300 hover:text-primary-400 font-medium py-2 mobile-nav-link" data-i18n="nav.contact">Contact</a>
+      
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+        <button id="mobile-lang-toggle" class="px-3 py-2 rounded-lg border border-slate-700 bg-slate-800 text-xs font-mono text-slate-200 flex items-center gap-2">
+          <i data-lucide="globe" class="w-4 h-4"></i>
+          <span id="mobile-lang-text">Français / English</span>
+        </button>
+        <a href="CV_Benhaimoud_Yahya.pdf" download="CV_Benhaimoud_Yahya.pdf" class="flex-1 py-2 text-center rounded-xl bg-gradient-to-r from-primary-500 to-indigo-600 text-white text-xs font-semibold shadow-md">
+          Télécharger CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full gradient-badge text-xs font-mono text-primary-300 shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span data-i18n="hero.status">Recherche Stage PFE & Opportunités Ingénieur 2026</span>
+        </div>
+
+        <!-- Name & Titles -->
+        <div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Yahya <span class="gradient-text">Benhaimoud</span>
+          </h1>
+          <div class="mt-3 text-xl sm:text-2xl font-semibold text-slate-300 flex items-center justify-center lg:justify-start gap-2 h-9">
+            <span class="text-slate-400">&gt;</span>
+            <span id="typewriter" class="text-primary-400 font-mono"></span>
+            <span class="animate-pulse text-primary-400">|</span>
+          </div>
+        </div>
+
+        <!-- Bio Paragraph -->
+        <p class="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light" data-i18n="hero.desc">
+          Futur ingénieur en <strong class="text-white font-medium">Data Science & Intelligence Artificielle</strong> à l'<strong>EMSI Casablanca</strong>, titulaire d'un Bachelor en Science des Données. Passionné par l'alliance entre modèles d'apprentissage automatique avancés (<span class="text-primary-400 font-mono">XGBoost, Scikit-learn, CNN</span>) et architectures logicielles modernes (<span class="text-indigo-400 font-mono">Next.js 16, React 19, FastAPI</span>). Fort d'expériences chez <strong class="text-white">SAFRAN</strong>, <strong class="text-white">OCP</strong> et dans l'industrie 4.0.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 via-primary-600 to-indigo-600 text-white font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center gap-2.5">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span data-i18n="hero.btnProjects">Explorer mes réalisations</span>
+          </a>
+
+          <a href="CV_Benhaimoud_Yahya.pdf" download="CV_Benhaimoud_Yahya.pdf" class="px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-800 hover:border-slate-500 text-slate-200 font-semibold shadow-md hover:-translate-y-0.5 active:translate-y-0 transition flex items-center gap-2.5">
+            <i data-lucide="file-down" class="w-4 h-4 text-primary-400"></i>
+            <span data-i18n="hero.btnCv">Curriculum Vitae (PDF)</span>
+          </a>
+
+          <a href="#contact" class="px-5 py-3.5 rounded-xl border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 font-medium hover:-translate-y-0.5 transition flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span data-i18n="hero.btnContact">Me contacter</span>
+          </a>
+        </div>
+
+        <!-- Social & Direct Channels -->
+        <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-400">
+          <a href="https://github.com/Yahyaben50" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition">
+            <i data-lucide="github" class="w-5 h-5 text-slate-300"></i>
+            <span class="font-mono">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/yahyabenhaimoud" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-primary-400 transition">
+            <i data-lucide="linkedin" class="w-5 h-5 text-sky-400"></i>
+            <span class="font-mono">LinkedIn</span>
+          </a>
+          <a href="mailto:benhaimoud20@gmail.com" class="flex items-center gap-2 hover:text-emerald-400 transition">
+            <i data-lucide="mail-check" class="w-5 h-5 text-emerald-400"></i>
+            <span class="font-mono">benhaimoud20@gmail.com</span>
+          </a>
+          <a href="tel:+212771364141" class="hidden sm:flex items-center gap-2 hover:text-primary-400 transition">
+            <i data-lucide="phone-call" class="w-5 h-5 text-primary-400"></i>
+            <span class="font-mono">+212 771 364141</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Visual Feature Card -->
+      <div class="lg:col-span-5">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Outer Neon Border Frame -->
+          <div class="relative p-[1px] rounded-3xl bg-gradient-to-b from-primary-500 via-indigo-500/40 to-slate-800 shadow-2xl shadow-primary-500/10">
+            <div class="bg-[#0c1220]/95 rounded-[23px] p-6 sm:p-8 backdrop-blur-xl space-y-6">
+              
+              <!-- Profile Header Card -->
+              <div class="flex items-center gap-4 border-b border-slate-800 pb-5">
+                <div class="relative">
+                  <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-primary-500/50 shadow-lg shadow-primary-500/30 shrink-0">
+                    <img src="yahya.jpg" alt="Yahya Benhaimoud" class="w-full h-full object-cover"/>
+                  </div>
+                  <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-[#0c1220] flex items-center justify-center">
+                    <span class="w-2 h-2 rounded-full bg-white"></span>
+                  </span>
+                </div>
+                <div>
+                  <div class="text-xs font-mono uppercase tracking-widest text-primary-400 font-semibold">Profil Ingénieur</div>
+                  <div class="text-lg font-bold text-white">Yahya Benhaimoud</div>
+                  <div class="text-xs text-slate-400 flex items-center gap-1.5 mt-0.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primary-400"></i>
+                    Safi & Casablanca, Maroc
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Strengths Quick Radar Grid -->
+              <div class="grid grid-cols-2 gap-3 font-mono text-xs">
+                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+                  <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400">
+                    <i data-lucide="brain-circuit" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-slate-400 text-[10px]">Domaine</div>
+                    <div class="font-semibold text-white">Data & IA</div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+                  <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-slate-400 text-[10px]">Engineering</div>
+                    <div class="font-semibold text-white">Data & IA</div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+                  <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                    <i data-lucide="factory" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-slate-400 text-[10px]">Secteur</div>
+                    <div class="font-semibold text-white">Industrie 4.0</div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2.5">
+                  <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-slate-400 text-[10px]">Formation</div>
+                    <div class="font-semibold text-white">EMSI Casa</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terminal Preview snippet -->
+              <div class="rounded-xl bg-black/60 border border-slate-800/80 p-3.5 font-mono text-xs text-slate-300">
+                <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800/80 text-[11px] text-slate-400">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                  </div>
+                  <span>yahya@ml-pipeline:~$</span>
+                </div>
+                <div class="space-y-1 text-slate-400 text-[11px]">
+                  <p><span class="text-emerald-400">$</span> python evaluate_model.py</p>
+                  <p class="text-sky-400">&gt; Model: XGBoost + Scikit-learn</p>
+                  <p class="text-slate-300">&gt; Accuracy: <span class="text-emerald-400 font-bold">98.4%</span> | TRS/OEE: <span class="text-indigo-400 font-bold">Optimisé</span></p>
+                  <p class="text-slate-400">&gt; Status: Production Ready (FastAPI + Next.js)</p>
+                </div>
+              </div>
+
+              <!-- Verified Companies Badges -->
+              <div class="pt-1">
+                <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2.5 text-center">Organisations & Projets de Confiance</div>
+                <div class="flex items-center justify-around gap-2 text-xs font-semibold text-slate-300">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-sky-300">SAFRAN</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-emerald-300">OCP Group</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-amber-300">Coin Outils</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/60 text-purple-300">EMSI</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Stats Bar -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      <div class="glass-card p-5 rounded-2xl text-center">
+        <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-sky-200">4+</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium" data-i18n="stats.exp">Expériences Industrielles</div>
+      </div>
+      <div class="glass-card p-5 rounded-2xl text-center">
+        <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-200">100%</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium" data-i18n="stats.autonomy">Autonomie Full-Stack & ML</div>
+      </div>
+      <div class="glass-card p-5 rounded-2xl text-center">
+        <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">15+</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium" data-i18n="stats.tech">Technologies Maîtrisées</div>
+      </div>
+      <div class="glass-card p-5 rounded-2xl text-center">
+        <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">Bac+5</div>
+        <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium" data-i18n="stats.school">Cycle Ingénieur d'Excellence</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300 mb-3">
+        <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+        <span data-i18n="about.badge">Profil & Vision</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="about.title">
+        Transformer la donnée brute en <span class="gradient-text">levier décisionnel & produits concrets</span>
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="about.subtitle">
+        Une combinaison rare d'expertise en Machine Learning / Analyse Prédictive et de rigueur en Ingénierie Logicielle moderne.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Pillar 1 -->
+      <div class="glass-card p-7 rounded-2xl space-y-4">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center">
+          <i data-lucide="cpu" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white" data-i18n="about.p1Title">Data Science & Intelligence Artificielle</h3>
+        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="about.p1Desc">
+          Conception de pipelines complets d'entraînement, nettoyage de données volumineuses, ingénierie de variables, modèles de maintenance prédictive (XGBoost, Scikit-learn, Random Forest), et réseaux neuronaux (ANN, CNN).
+        </p>
+        <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px] text-sky-300">
+          <span class="px-2 py-0.5 rounded bg-sky-950/60 border border-sky-800">Scikit-learn</span>
+          <span class="px-2 py-0.5 rounded bg-sky-950/60 border border-sky-800">XGBoost</span>
+          <span class="px-2 py-0.5 rounded bg-sky-950/60 border border-sky-800">Pandas</span>
+          <span class="px-2 py-0.5 rounded bg-sky-950/60 border border-sky-800">Power BI</span>
+        </div>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="glass-card p-7 rounded-2xl space-y-4">
+        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+          <i data-lucide="code-2" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white" data-i18n="about.p2Title">Développement Full-Stack & APIs</h3>
+        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="about.p2Desc">
+          Capacité démontrée à concevoir et livrer des applications web de bout en bout en production. Interfaces fluides et réactives (React 19, Next.js 16, TypeScript) connectées à des backends robustes et performants (FastAPI, Node.js, PostgreSQL/MySQL).
+        </p>
+        <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px] text-indigo-300">
+          <span class="px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800">Next.js 16</span>
+          <span class="px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800">React 19</span>
+          <span class="px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800">FastAPI</span>
+          <span class="px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="glass-card p-7 rounded-2xl space-y-4">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white" data-i18n="about.p3Title">Digital Twin, IoT & Impact Métier</h3>
+        <p class="text-slate-300 text-sm leading-relaxed" data-i18n="about.p3Desc">
+          Expérience industrielle concrète dans la mise en œuvre de jumeaux numériques (Digital Twin) et de systèmes de supervision temps réel. Orientation résultats : calcul d'indicateurs OEE/TRS, automatisation de reporting, réduction des coûts opérationnels.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-1.5 font-mono text-[11px] text-emerald-300">
+          <span class="px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">Digital Twin</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">IoT ESP32</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">OEE / TRS</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">jsPDF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE AI DEMO / DIGITAL TWIN SIMULATOR ================= -->
+  <section id="ai-demo" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="rounded-3xl border border-primary-500/30 bg-gradient-to-b from-[#0f172a] via-[#0c1220] to-[#090d16] p-6 sm:p-10 shadow-2xl shadow-primary-500/10 relative overflow-hidden">
+      
+      <!-- Ambient background decoration -->
+      <div class="absolute -top-32 -right-32 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/20 border border-primary-400/30 text-xs font-mono text-primary-300 mb-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>DÉMONSTRATION TECHNIQUE INTERACTIVE</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Simulateur Digital Twin & Maintenance Prédictive IA
+        </h2>
+        <p class="mt-2 text-slate-300 text-sm sm:text-base">
+          Inspiré du projet industriel réalisé pour <strong class="text-white">Coin Outils</strong>. Testez en direct le modèle prédictif : ajustez les variables de capteurs industriels ci-dessous et observez le calcul en temps réel du taux de défaillance, de l'indice TRS/OEE et des recommandations techniques.
+        </p>
+      </div>
+
+      <!-- Simulator Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Controls (Left 6 cols) -->
+        <div class="lg:col-span-5 space-y-5 bg-slate-900/80 p-5 sm:p-6 rounded-2xl border border-slate-800">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono text-slate-400">
+            <span>CAPTEURS & TÉLÉMÉTRIE MACHINE</span>
+            <button id="reset-sim-btn" class="text-primary-400 hover:text-white transition flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              <span>Réinitialiser</span>
+            </button>
+          </div>
+
+          <!-- Slider 1: Temperature -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs font-medium text-slate-300">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="thermometer" class="w-4 h-4 text-amber-400"></i>
+                Température Moteur (°C)
+              </span>
+              <span id="temp-val" class="font-mono text-primary-400 font-bold">68 °C</span>
+            </div>
+            <input type="range" id="input-temp" min="30" max="120" value="68" class="w-full accent-primary-500 cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>Nominale: 50-75°C</span>
+              <span>Seuil Critique: 95°C+</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Vibration -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs font-medium text-slate-300">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="activity" class="w-4 h-4 text-sky-400"></i>
+                Vibrations Harmoniques (mm/s)
+              </span>
+              <span id="vib-val" class="font-mono text-primary-400 font-bold">2.4 mm/s</span>
+            </div>
+            <input type="range" id="input-vib" min="0.5" max="10.0" step="0.1" value="2.4" class="w-full accent-primary-500 cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>Calme: &lt; 3.0</span>
+              <span>Anomalie: &gt; 6.5</span>
+            </div>
+          </div>
+
+          <!-- Slider 3: RPM Speed -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs font-medium text-slate-300">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="gauge" class="w-4 h-4 text-indigo-400"></i>
+                Vitesse de Rotation (RPM)
+              </span>
+              <span id="rpm-val" class="font-mono text-primary-400 font-bold">2850 RPM</span>
+            </div>
+            <input type="range" id="input-rpm" min="1000" max="4500" step="50" value="2850" class="w-full accent-primary-500 cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>Régime standard: 2800</span>
+              <span>Surcharge: &gt; 3800</span>
+            </div>
+          </div>
+
+          <!-- Slider 4: Operating Hours -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between text-xs font-medium text-slate-300">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                Heures de Fonctionnement Continu
+              </span>
+              <span id="hours-val" class="font-mono text-primary-400 font-bold">140 h</span>
+            </div>
+            <input type="range" id="input-hours" min="10" max="800" step="10" value="140" class="w-full accent-primary-500 cursor-pointer">
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>Cycle normal: &lt; 300h</span>
+              <span>Maintenance: 500h+</span>
+            </div>
+          </div>
+
+          <!-- Quick Simulation Presets -->
+          <div class="pt-2">
+            <div class="text-[11px] font-mono text-slate-400 mb-2">SCÉNARIOS INDUSTRIELS TEST :</div>
+            <div class="grid grid-cols-3 gap-2 text-xs">
+              <button id="preset-normal" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-emerald-950/60 border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-emerald-300 font-medium transition text-center">
+                🟢 Optimal
+              </button>
+              <button id="preset-warning" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-amber-950/60 border border-slate-700 hover:border-amber-500 text-slate-300 hover:text-amber-300 font-medium transition text-center">
+                🟡 Alerte Shift
+              </button>
+              <button id="preset-critical" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-rose-950/60 border border-slate-700 hover:border-rose-500 text-slate-300 hover:text-rose-300 font-medium transition text-center">
+                🔴 Défaillance
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ML Inference Output & Realtime Gauge (Right 7 cols) -->
+        <div class="lg:col-span-7 space-y-5">
+          
+          <!-- Live KPI Metric Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <!-- Health Score -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Indice Santé Machine</div>
+              <div id="metric-health" class="text-3xl font-extrabold text-emerald-400 mt-1 font-mono">92%</div>
+              <div class="text-[10px] text-slate-400 mt-1">Calcul pondéré ML</div>
+            </div>
+
+            <!-- Failure Probability -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">Risque de Défaillance</div>
+              <div id="metric-risk" class="text-3xl font-extrabold text-sky-400 mt-1 font-mono">8.2%</div>
+              <div class="text-[10px] text-slate-400 mt-1">Modèle XGBoost</div>
+            </div>
+
+            <!-- TRS / OEE -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">OEE / TRS Estimé</div>
+              <div id="metric-oee" class="text-3xl font-extrabold text-indigo-400 mt-1 font-mono">88.5%</div>
+              <div class="text-[10px] text-slate-400 mt-1">Performance globale</div>
+            </div>
+
+          </div>
+
+          <!-- Alert Banner & Recommendation -->
+          <div id="status-card" class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex items-start gap-3.5 transition-all">
+            <div id="status-icon" class="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span id="status-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-emerald-500/20 text-emerald-300">
+                  STATUT OPÉRATIONNEL : NOMINAL
+                </span>
+              </div>
+              <p id="status-recommendation" class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                Tous les paramètres de télémétrie sont dans la plage admissible. Aucune anomalie de vibration ou de surchauffe thermique détectée. Prochaine inspection standard programmée dans 160 heures.
+              </p>
+            </div>
+          </div>
+
+          <!-- Real-Time Telemetry Curve (Chart.js) -->
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-slate-400">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="line-chart" class="w-4 h-4 text-primary-400"></i>
+                Flux Temporel des Échantillons (Vibrations & Température)
+              </span>
+              <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Inférence Live
+              </span>
+            </div>
+            <div class="h-44 w-full">
+              <canvas id="telemetryChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Technical implementation tags -->
+          <div class="p-3 rounded-xl bg-black/40 border border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400 font-mono">
+            <span class="text-slate-300 font-medium">Stack de production réutilisée :</span>
+            <div class="flex flex-wrap gap-1.5 text-[11px]">
+              <span class="text-sky-400">FastAPI</span> •
+              <span class="text-indigo-400">React.js</span> •
+              <span class="text-amber-400">XGBoost</span> •
+              <span class="text-emerald-400">Chart.js</span> •
+              <span class="text-purple-400">jsPDF</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCES SECTION ================= -->
+  <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300 mb-3">
+        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+        <span data-i18n="exp.badge">Parcours & Missions</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="exp.title">
+        Expériences <span class="gradient-text">Professionnelles & Industrielles</span>
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="exp.subtitle">
+        Des réalisations tangibles au sein de leaders aéronautiques, industriels et institutionnels.
+      </p>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+      
+      <!-- Experience 1: SAFRAN -->
+      <div class="relative pl-6 md:pl-10 group">
+        <!-- Milestone Pin -->
+        <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-primary-500 flex items-center justify-center group-hover:scale-125 group-hover:border-primary-400 group-hover:shadow-lg group-hover:shadow-primary-500/50 transition">
+          <div class="w-2 h-2 rounded-full bg-primary-400"></div>
+        </div>
+
+        <!-- Date tag (Desktop left pill) -->
+        <div class="md:absolute md:-left-36 md:top-1.5 md:w-28 text-left md:text-right font-mono text-xs text-primary-400 font-semibold mb-2 md:mb-0">
+          2026
+        </div>
+
+        <!-- Experience Card -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono font-medium mb-1">
+                Industrie Aéronautique
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Développeur Freelance - SAFRAN Padel Booking System</h3>
+              <div class="text-sm font-semibold text-primary-400 mt-0.5">SAFRAN Aircraft Engines Morocco</div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold">
+              Freelance — Mission Terminée
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Conception et développement autonome d'une solution web interne complète de réservation de terrain de padel, permettant à l'ensemble du personnel de planifier leurs sessions en temps réel sans conflit horaire.
+          </p>
+
+          <!-- Key Deliverables list -->
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Frontend moderne de pointe :</strong> Développé sous Next.js 16, React 19 et TypeScript avec formulaire dynamique, calendrier interactif et sélection des créneaux en temps réel.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Architecture API & Backend :</strong> Routes API Next.js gérant la validation des conflits, stockage via Google Sheets API (centralisation sans dépendance BD lourde).</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Automatisation des flux métiers :</strong> Génération automatique de tickets PDF téléchargeables, et dispatch de courriels SMTP instantanés aux managers via Nodemailer.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Livraison 100% autonome :</strong> Du cadrage fonctionnel, UX/UI, développement, intégration services Google jusqu'au déploiement opérationnel.</span>
+            </div>
+          </div>
+
+          <!-- Stack Tags -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-primary-300">Next.js 16</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-primary-300">React 19</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-indigo-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-sky-300">Tailwind CSS</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-300">Google Sheets API</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-amber-300">Nodemailer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 2: Coin Outils -->
+      <div class="relative pl-6 md:pl-10 group">
+        <!-- Milestone Pin -->
+        <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-indigo-500 flex items-center justify-center group-hover:scale-125 group-hover:border-indigo-400 group-hover:shadow-lg group-hover:shadow-indigo-500/50 transition">
+          <div class="w-2 h-2 rounded-full bg-indigo-400"></div>
+        </div>
+
+        <div class="md:absolute md:-left-36 md:top-1.5 md:w-28 text-left md:text-right font-mono text-xs text-indigo-400 font-semibold mb-2 md:mb-0">
+          Avr. - Juin 2026
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono font-medium mb-1">
+                Industrie de l'Outillage & 4.0
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Stagiaire - Digital Twin & Maintenance Prédictive IA</h3>
+              <div class="text-sm font-semibold text-indigo-300 mt-0.5">Coin Outils | Casablanca, Maroc</div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono">
+              Casablanca
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Conception et développement d'une plateforme Digital Twin complète pour la supervision temps réel d'équipements industriels, intégrant des modèles d'intelligence artificielle pour anticiper les pannes et calculer les indicateurs de performance.
+          </p>
+
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+              <span><strong>Modélisation ML avancée :</strong> Entraînement et validation d'algorithmes prédictifs (XGBoost, Scikit-learn) basés sur les historiques de pannes et métriques capteurs.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+              <span><strong>Frontend React & Visualisation :</strong> Visualisation dynamique des KPI temps réel, graphiques Chart.js et monitoring continu de l'état machine.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+              <span><strong>Backend FastAPI orchestré :</strong> Serveur API REST haute cadence assurant le pont fluide entre les modèles ML Python et l'interface utilisateur.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+              <span><strong>Tableaux de bord OEE / TRS :</strong> Indicateurs de disponibilité, cadence, qualité et génération automatique de rapports PDF d'inspection pour les techniciens (jsPDF).</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-indigo-300">React.js</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-300">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-sky-300">Python</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-amber-300">XGBoost</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-purple-300">Scikit-learn</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Chart.js</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-rose-300">jsPDF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 3: OCP -->
+      <div class="relative pl-6 md:pl-10 group">
+        <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-emerald-500 flex items-center justify-center group-hover:scale-125 group-hover:border-emerald-400 group-hover:shadow-lg group-hover:shadow-emerald-500/50 transition">
+          <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+        </div>
+
+        <div class="md:absolute md:-left-36 md:top-1.5 md:w-28 text-left md:text-right font-mono text-xs text-emerald-400 font-semibold mb-2 md:mb-0">
+          Avr. - Juin 2025
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium mb-1">
+                Leader Mondial Phosphates & Chimie
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Stagiaire Technicien - Analyse & Visualisation des Données de Production</h3>
+              <div class="text-sm font-semibold text-emerald-300 mt-0.5">Office Chérifien des Phosphates (OCP) | Safi, Maroc</div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+              Safi
+            </span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Collecte, nettoyage et modélisation de volumes importants de données industrielles pour optimiser la consommation de soufre et la performance des lignes de production.
+          </p>
+
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Traitement & EDA massif :</strong> Utilisation avancée de Python (Pandas, NumPy) pour nettoyer des données industrielles bruitées et extraire des variables clés de production.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Tableaux de bord décisionnels Power BI :</strong> Conception de mesures DAX sur-mesure, calcul du Taux de Rendement Global (TRG) et suivi en temps réel des arrêts de ligne.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Application Full-Stack & Automatisation :</strong> Création d'une plateforme web centralisant l'accès aux données, réduisant drastiquement le temps de reporting manuel pour les équipes de direction.</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-300">Python</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-300">Pandas</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-amber-300">Power BI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-amber-300">DAX</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-sky-300">Jupyter</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Full-Stack Web</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 4: Préfecture de Safi -->
+      <div class="relative pl-6 md:pl-10 group">
+        <div class="absolute -left-[13px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-slate-600 flex items-center justify-center group-hover:scale-125 group-hover:border-primary-400 group-hover:shadow-lg group-hover:shadow-primary-500/50 transition">
+          <div class="w-2 h-2 rounded-full bg-slate-400"></div>
+        </div>
+
+        <div class="md:absolute md:-left-36 md:top-1.5 md:w-28 text-left md:text-right font-mono text-xs text-slate-400 font-semibold mb-2 md:mb-0">
+          Juin - Juil. 2024
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-slate-300 text-xs font-mono font-medium mb-1">
+                Administration Publique
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Stagiaire Développement Web - Application de Gestion</h3>
+              <div class="text-sm font-semibold text-slate-300 mt-0.5">Préfecture de Safi | Safi, Maroc</div>
+            </div>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Développement complet d'une application interne facilitant la gestion et le suivi des dossiers administratifs.
+          </p>
+
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400 shrink-0 mt-0.5"></i>
+              <span>Développement Frontend réactif et Backend de gestion des flux administratifs.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400 shrink-0 mt-0.5"></i>
+              <span>Optimisation des bases de données SQL : schémas normalisés, indexation et requêtes d'agrégation rapides.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-400 shrink-0 mt-0.5"></i>
+              <span>Pratique de la méthodologie Agile en équipe pour la priorisation et livraison des sprints.</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-sky-300">HTML5/CSS3/JS</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-indigo-300">SQL Avancé</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-emerald-300">Agile Scrum</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS SHOWCASE SECTION ================= -->
+  <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300 mb-3">
+        <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+        <span data-i18n="projects.badge">Portfolio Technique</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="projects.title">
+        Projets Phares & <span class="gradient-text">Réalisations Concrètes</span>
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="projects.subtitle">
+        Des projets alliant rigueur algorithmique, systèmes embarqués connectés et interfaces web d'entreprise.
+      </p>
+
+      <!-- Project Category Filters -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+        <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-mono font-medium transition border border-primary-500 bg-primary-500/20 text-primary-300" data-filter="all">
+          Tous les projets (6)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium transition border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700" data-filter="ai-data">
+          Data & Intelligence Artificielle
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium transition border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700" data-filter="fullstack">
+          Full-Stack Web & Next.js
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-mono font-medium transition border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700" data-filter="iot">
+          IoT & Systèmes Connectés
+        </button>
+      </div>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+      
+      <!-- Card 1: SAFRAN Padel Booking -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="fullstack">
+        <div class="h-52 border-b border-slate-800 relative overflow-hidden group" id="safran-img-card" class="h-52 border-b border-slate-800 relative overflow-hidden group cursor-pointer" onclick="openGallery('safran')">
+          <!-- Slideshow photos -->
+          <img src="safran/safran_1.png" alt="SAFRAN Padel 1" class="safran-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:block"/>
+          <img src="safran/safran_2.png" alt="SAFRAN Padel 2" class="safran-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="safran/safran_3.png" alt="SAFRAN Padel 3" class="safran-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="safran/reservation_email.jpeg" alt="Email de confirmation de réservation SAFRAN" class="safran-img absolute inset-0 w-full h-full object-contain bg-slate-950 opacity-90 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent pointer-events-none"></div>
+          <!-- Badges top -->
+          <div class="absolute top-3 left-3 z-10">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-md">
+              Freelance • SAFRAN
+            </span>
+          </div>
+          <div class="absolute top-3 right-3 z-10">
+            <i data-lucide="calendar-check" class="w-6 h-6 text-primary-400"></i>
+          </div>
+          <!-- Title bottom -->
+          <div class="absolute bottom-9 left-4 z-10 pointer-events-none">
+            <div class="text-xs font-mono text-slate-300">Next.js 16 • React 19 • TypeScript</div>
+            <div class="text-lg font-bold text-white mt-0.5">SAFRAN Padel Booking System</div>
+          </div>
+          <!-- Slide dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5" id="safran-dots">
+            <button onclick="event.stopPropagation(); goSafranSlide(0)" class="h-1.5 rounded-full transition-all safran-dot" style="background:white;opacity:1;width:12px"></button>
+            <button onclick="event.stopPropagation(); goSafranSlide(1)" class="h-1.5 rounded-full transition-all safran-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goSafranSlide(2)" class="h-1.5 rounded-full transition-all safran-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goSafranSlide(3)" class="h-1.5 rounded-full transition-all safran-dot" style="background:white;opacity:0.4;width:6px"></button>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Application interne de réservation en temps réel éliminant les conflits de créneaux. Intégration Google Sheets API pour base de données cloud, génération automatique de tickets PDF et envoi de courriels d'approbation.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Next.js 16</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">React 19</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400">Google Sheets API</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-400">Nodemailer</span>
+            </div>
+
+            <button onclick="openProjectModal('safran')" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-primary-500/20 hover:border-primary-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-2">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-primary-400"></i>
+              <span>Détails & Architecture</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Digital Twin & Predictive Maintenance -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="ai-data">
+        <div class="h-52 border-b border-slate-800 relative overflow-hidden group" id="dt-img-card" class="h-52 border-b border-slate-800 relative overflow-hidden group cursor-pointer" onclick="openGallery('digital-twin')">
+          <!-- Slideshow photos (Machine Learning & Digital Twin evaluation curves) -->
+          <img src="digital_twin/confusion_matrices.png" alt="Matrices de confusion ML" class="dt-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:block"/>
+          <img src="digital_twin/feature_importance.png" alt="Importance des variables" class="dt-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="digital_twin/model_comparison.png" alt="Comparaison des modèles XGBoost" class="dt-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="digital_twin/roc_curves.png" alt="Courbes ROC" class="dt-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="digital_twin/learning_curves.png" alt="Courbes d'apprentissage" class="dt-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent pointer-events-none"></div>
+          <!-- Badges top -->
+          <div class="absolute top-3 left-3 z-10 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 backdrop-blur-md">
+              Industrie 4.0 • Coin Outils
+            </span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 backdrop-blur-md">
+              <i data-lucide="video" class="w-3 h-3"></i> Vidéo Démo
+            </span>
+          </div>
+          <div class="absolute top-3 right-3 z-10">
+            <i data-lucide="cpu" class="w-6 h-6 text-indigo-400"></i>
+          </div>
+          <!-- Title bottom -->
+          <div class="absolute bottom-9 left-4 z-10 pointer-events-none">
+            <div class="text-xs font-mono text-slate-300">XGBoost • Scikit-learn • FastAPI</div>
+            <div class="text-lg font-bold text-white mt-0.5">Plateforme Digital Twin & IA</div>
+          </div>
+          <!-- Slide dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5" id="dt-dots">
+            <button onclick="event.stopPropagation(); goDtSlide(0)" class="h-1.5 rounded-full transition-all dt-dot" style="background:white;opacity:1;width:12px"></button>
+            <button onclick="event.stopPropagation(); goDtSlide(1)" class="h-1.5 rounded-full transition-all dt-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goDtSlide(2)" class="h-1.5 rounded-full transition-all dt-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goDtSlide(3)" class="h-1.5 rounded-full transition-all dt-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goDtSlide(4)" class="h-1.5 rounded-full transition-all dt-dot" style="background:white;opacity:0.4;width:6px"></button>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Jumeau numérique de supervision d'équipements industriels. Modèles d'apprentissage automatique entraînés pour la prédiction de pannes, calcul OEE/TRS en continu et génération de rapports techniciens.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">FastAPI</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">XGBoost</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">React.js</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">Chart.js</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Vidéo MP4</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openVideoModal('digital-twin')" class="py-2.5 rounded-xl border border-indigo-500/40 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-1.5">
+                <i data-lucide="play-circle" class="w-4 h-4 text-indigo-400"></i>
+                <span>Voir la Vidéo</span>
+              </button>
+              <button onclick="openProjectModal('digital-twin')" class="py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-indigo-500/20 hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-1.5">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Détails</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: OCP Production & Sulfur Analytics -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="ai-data">
+        <div class="h-52 border-b border-slate-800 relative overflow-hidden group" id="ocp-img-card" class="h-52 border-b border-slate-800 relative overflow-hidden group cursor-pointer" onclick="openGallery('ocp')">
+          <!-- Slideshow photos -->
+          <img src="stage%20ocp/ocp_1.png" alt="OCP Dashboard 1" class="ocp-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:block"/>
+          <img src="stage%20ocp/ocp_2.png" alt="OCP Dashboard 2" class="ocp-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="stage%20ocp/ocp_3.png" alt="OCP Dashboard 3" class="ocp-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="stage%20ocp/ocp_4.png" alt="OCP Dashboard 4" class="ocp-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent pointer-events-none"></div>
+          <!-- Badges top -->
+          <div class="absolute top-3 left-3 z-10">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 backdrop-blur-md">
+              Industrie Lourde • OCP
+            </span>
+          </div>
+          <div class="absolute top-3 right-3 z-10">
+            <i data-lucide="bar-chart-3" class="w-6 h-6 text-emerald-400"></i>
+          </div>
+          <!-- Title bottom -->
+          <div class="absolute bottom-9 left-4 z-10 pointer-events-none">
+            <div class="text-xs font-mono text-slate-300">Power BI • DAX • Python Pandas</div>
+            <div class="text-lg font-bold text-white mt-0.5">Analyse Données de Production OCP</div>
+          </div>
+          <!-- Slide dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5" id="ocp-dots">
+            <button onclick="event.stopPropagation(); goOcpSlide(0)" class="h-1.5 rounded-full transition-all ocp-dot" style="background:white;opacity:1;width:12px"></button>
+            <button onclick="event.stopPropagation(); goOcpSlide(1)" class="h-1.5 rounded-full transition-all ocp-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goOcpSlide(2)" class="h-1.5 rounded-full transition-all ocp-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goOcpSlide(3)" class="h-1.5 rounded-full transition-all ocp-dot" style="background:white;opacity:0.4;width:6px"></button>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Analyse et suivi de la consommation de soufre pour l'Office Chérifien des Phosphates. Tableaux de bord Power BI d'aide à la décision pour directeurs opérationnels et application web centralisée.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Python Pandas</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">Power BI / DAX</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">KPI TRG</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Full-Stack App</span>
+            </div>
+
+            <button onclick="openProjectModal('ocp')" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-emerald-500/20 hover:border-emerald-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-2">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>Détails & Architecture</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Smart Home IoT (PFE) -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="iot">
+        <div class="h-52 border-b border-slate-800 relative overflow-hidden group cursor-pointer" id="sh-img-card" onclick="openGallery('iot-home')">
+          <!-- Slideshow photos -->
+          <img src="smarthome/smarthome_1.png" alt="Smart Home Prototype 1" class="sh-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:block"/>
+          <img src="smarthome/smarthome_2.png" alt="Smart Home Prototype 2" class="sh-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="smarthome/smarthome_3.png" alt="Smart Home Interface 3" class="sh-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="smarthome/smarthome_4.png" alt="Smart Home Prototype 4" class="sh-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent pointer-events-none"></div>
+          <!-- Badges top -->
+          <div class="absolute top-3 left-3 z-10 flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-md">
+              Projet PFE • IoT & Embedded
+            </span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 backdrop-blur-md">
+              <i data-lucide="video" class="w-3 h-3"></i> Vidéo Démo
+            </span>
+          </div>
+          <div class="absolute top-3 right-3 z-10 flex items-center gap-1.5">
+            <span class="p-1.5 rounded-lg bg-black/60 text-slate-300 hover:text-white transition">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </span>
+          </div>
+          <!-- Title bottom -->
+          <div class="absolute bottom-9 left-4 z-10 pointer-events-none">
+            <div class="text-xs font-mono text-slate-300">Arduino • ESP32 • Node.js • React</div>
+            <div class="text-lg font-bold text-white mt-0.5">Maison Connectée & Intelligente IoT</div>
+          </div>
+          <!-- Slide dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5" id="sh-dots">
+            <button onclick="event.stopPropagation(); goShSlide(0)" class="h-1.5 rounded-full transition-all sh-dot" style="background:white;opacity:1;width:12px"></button>
+            <button onclick="event.stopPropagation(); goShSlide(1)" class="h-1.5 rounded-full transition-all sh-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goShSlide(2)" class="h-1.5 rounded-full transition-all sh-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goShSlide(3)" class="h-1.5 rounded-full transition-all sh-dot" style="background:white;opacity:0.4;width:6px"></button>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Système domotique complet de bout en bout : contrôle de l'éclairage, porte de garage automatisée, télémétrie de température et humidité (DHT11, capteurs gaz MQ-7/MQ-2) pilotés par interface React.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">ESP32 & Arduino</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Node.js / Express</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">React.js</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400">Vidéo Démo</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openVideoModal('smarthome')" class="py-2.5 rounded-xl border border-purple-500/40 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-1.5">
+                <i data-lucide="play-circle" class="w-4 h-4 text-purple-400"></i>
+                <span>Voir la Vidéo</span>
+              </button>
+              <button onclick="openProjectModal('iot-home')" class="py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-purple-500/20 hover:border-purple-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-1.5">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-purple-400"></i>
+                <span>Détails</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: BMW Sales Analytics Dashboard -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="ai-data">
+        <div class="h-52 border-b border-slate-800 relative overflow-hidden group" id="bmw-img-card" class="h-52 border-b border-slate-800 relative overflow-hidden group cursor-pointer" onclick="openGallery('bmw')">
+          <!-- Slideshow photos -->
+          <img src="bmw_sales/bmw_1.png" alt="BMW Sales Dashboard 1" class="bmw-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:block"/>
+          <img src="bmw_sales/bmw_2.png" alt="BMW Sales Dashboard 2" class="bmw-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <img src="bmw_sales/bmw_3.png" alt="BMW Sales Dashboard 3" class="bmw-img absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 transition duration-500" style="display:none"/>
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/30 to-transparent pointer-events-none"></div>
+          <!-- Badges top -->
+          <div class="absolute top-3 left-3 z-10">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+              Business Intelligence & EDA
+            </span>
+          </div>
+          <div class="absolute top-3 right-3 z-10">
+            <i data-lucide="trending-up" class="w-6 h-6 text-amber-400"></i>
+          </div>
+          <!-- Title bottom -->
+          <div class="absolute bottom-9 left-4 z-10 pointer-events-none">
+            <div class="text-xs font-mono text-slate-300">Python • Pandas • Power BI</div>
+            <div class="text-lg font-bold text-white mt-0.5">Analyse des Ventes BMW (2018-2025)</div>
+          </div>
+          <!-- Slide dots -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5" id="bmw-dots">
+            <button onclick="event.stopPropagation(); goBmwSlide(0)" class="h-1.5 rounded-full transition-all bmw-dot" style="background:white;opacity:1;width:12px"></button>
+            <button onclick="event.stopPropagation(); goBmwSlide(1)" class="h-1.5 rounded-full transition-all bmw-dot" style="background:white;opacity:0.4;width:6px"></button>
+            <button onclick="event.stopPropagation(); goBmwSlide(2)" class="h-1.5 rounded-full transition-all bmw-dot" style="background:white;opacity:0.4;width:6px"></button>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Pipeline complet d'analyse exploratoire des ventes mondiales BMW. Définition de KPI commerciaux stratégiques, détection des tendances géographiques et dashboard dynamique Power BI.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">Power BI</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Python Pandas</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">EDA Statistique</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">DAX</span>
+            </div>
+
+            <button onclick="openProjectModal('bmw')" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-amber-500/20 hover:border-amber-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-2">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>Détails & Architecture</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Product Management & Web Scraping -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col project-card" data-category="fullstack">
+        <div class="h-48 bg-gradient-to-tr from-slate-900 via-teal-950 to-slate-900 p-6 flex flex-col justify-between border-b border-slate-800 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition"></div>
+          <div class="flex justify-between items-center z-10">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30">
+              Product Strategy & Data Scraping
+            </span>
+            <i data-lucide="pie-chart" class="w-6 h-6 text-teal-400"></i>
+          </div>
+          <div class="z-10">
+            <div class="text-xs font-mono text-slate-400">BeautifulSoup • SWOT • Porter • UX</div>
+            <div class="text-lg font-bold text-white mt-1">Analyse Stratégique & Scraping Marché</div>
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Analyses fonctionnelles approfondies (RAMADAN HALAL, Dropshipping), web scraping automatisé avec BeautifulSoup, benchmark concurrentiel et rédaction de User Stories structurées.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-teal-300">BeautifulSoup</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-sky-300">Web Scraping</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-indigo-300">SWOT / Porter</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">User Stories</span>
+            </div>
+
+            <button onclick="openProjectModal('product')" class="w-full py-2.5 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-teal-500/20 hover:border-teal-400/50 text-slate-200 hover:text-white text-xs font-semibold transition flex items-center justify-center gap-2">
+              <i data-lucide="eye" class="w-3.5 h-3.5 text-teal-400"></i>
+              <span>Détails & Architecture</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TECHNICAL SKILLS SECTION ================= -->
+  <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300 mb-3">
+        <i data-lucide="binary" class="w-3.5 h-3.5"></i>
+        <span data-i18n="skills.badge">Expertise & Outils</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="skills.title">
+        Compétences <span class="gradient-text">Techniques & Méthodologiques</span>
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="skills.subtitle">
+        Un ensemble cohérent de compétences orientées vers la création de valeur et l'industrialisation.
+      </p>
+
+      <!-- Skill Interactive Filter Input -->
+      <div class="mt-6 max-w-md mx-auto relative">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+        <input type="text" id="skill-search-input" placeholder="Rechercher une technologie (ex: Python, React, XGBoost...)" class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-primary-400 transition font-mono">
+      </div>
+    </div>
+
+    <!-- Skills Matrix Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-container">
+      
+      <!-- Category 1: Machine Learning & Deep Learning -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Machine & Deep Learning</h3>
+            <span class="text-[11px] font-mono text-slate-400">Modèles Prédictifs & Réseaux</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Scikit-learn & XGBoost</span>
+              <span class="text-sky-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[92%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Random Forest & Decision Tree</span>
+              <span class="text-sky-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Réseaux Neuronaux (ANN, CNN)</span>
+              <span class="text-sky-400">Intermédiaire</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[82%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Algorithmes KNN, Clustering</span>
+              <span class="text-sky-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Data Science & Analytics -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Data & Analyse Décisionnelle</h3>
+            <span class="text-[11px] font-mono text-slate-400">EDA, BI & Visualisation</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Python (Pandas, NumPy, Matplotlib)</span>
+              <span class="text-amber-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-amber-500 to-yellow-400 w-[94%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Power BI & DAX</span>
+              <span class="text-amber-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-amber-500 to-yellow-400 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Jupyter & Microsoft Excel Avancé</span>
+              <span class="text-amber-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-amber-500 to-yellow-400 w-[92%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Calculs KPI (TRG, TRS/OEE)</span>
+              <span class="text-amber-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-amber-500 to-yellow-400 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Frontend Development -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+            <i data-lucide="layout" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Frontend Moderne</h3>
+            <span class="text-[11px] font-mono text-slate-400">UI / UX Réactive</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Next.js 16 & React 19</span>
+              <span class="text-indigo-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>TypeScript & JavaScript ES6+</span>
+              <span class="text-indigo-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Tailwind CSS & Chart.js</span>
+              <span class="text-indigo-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-[92%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>HTML5 & Conception Responsive</span>
+              <span class="text-indigo-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-[95%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4: Backend & APIs -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="server" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Backend & Architecture API</h3>
+            <span class="text-[11px] font-mono text-slate-400">Services & Micro-APIs</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>FastAPI (Python)</span>
+              <span class="text-emerald-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Flask & Node.js (Express)</span>
+              <span class="text-emerald-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[85%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Conception d'APIs REST</span>
+              <span class="text-emerald-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Next.js API Routes</span>
+              <span class="text-emerald-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 5: Databases & Big Data -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Bases de Données & Big Data</h3>
+            <span class="text-[11px] font-mono text-slate-400">SQL & Écosystème Distribué</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>PostgreSQL & MySQL</span>
+              <span class="text-purple-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>SQL Avancé (Jointures, Index, Vues)</span>
+              <span class="text-purple-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[92%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Concepts Big Data (Hadoop, Apache Spark)</span>
+              <span class="text-purple-400">Fondamentaux</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[78%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Google Sheets API & Stockage Cloud</span>
+              <span class="text-purple-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-[86%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 6: IoT & Hardware -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4 skill-box">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center">
+            <i data-lucide="radio" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">IoT, Embarqué & Outillage</h3>
+            <span class="text-[11px] font-mono text-slate-400">Capteurs & Microcontrôleurs</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Arduino & ESP32 Microcontrôleurs</span>
+              <span class="text-rose-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-rose-500 to-amber-500 w-[88%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Capteurs (DHT11, MQ-7, MQ-2 gaz)</span>
+              <span class="text-rose-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-rose-500 to-amber-500 w-[85%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Web Scraping (BeautifulSoup)</span>
+              <span class="text-rose-400">Avancé</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-rose-500 to-amber-500 w-[86%] rounded-full"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+              <span>Git, GitHub & Versioning</span>
+              <span class="text-rose-400">Expertise</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-rose-500 to-amber-500 w-[90%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION & ACADEMIC PATH ================= -->
+  <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300 mb-3">
+        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+        <span data-i18n="edu.badge">Formation Académique</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white" data-i18n="edu.title">
+        Parcours Universitaire & <span class="gradient-text">Grandes Écoles</span>
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="edu.subtitle">
+        Une progression rigoureuse : du Baccalauréat Sciences Mathématiques jusqu'au Cycle d'Ingénieur en Data Science & IA.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Card 1: EMSI Casablanca -->
+      <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800 relative overflow-hidden group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 text-primary-400 flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 font-mono text-xs font-semibold">
+            2026 - En cours
+          </span>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-white group-hover:text-primary-300 transition">Cycle d'Ingénieur - Data Science & Intelligence Artificielle</h3>
+          <div class="text-sm font-semibold text-primary-400 mt-1">École Marocaine des Sciences de l'Ingénieur (EMSI)</div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 mt-1 font-mono">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Casablanca, Maroc
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            Spécialisation avancée en algorithmes de Machine Learning, Deep Learning, architectures Big Data, modélisation prédictive et ingénierie de solutions d'intelligence artificielle appliquées à l'industrie.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2: Bachelor EST Essaouira -->
+      <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800 relative overflow-hidden group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono text-xs font-semibold">
+            2025 - 2026
+          </span>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition">Bachelor (Licence) - Ingénierie Informatique, IA & Science des Données</h3>
+          <div class="text-sm font-semibold text-indigo-400 mt-1">École Supérieure de Technologie (EST)</div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 mt-1 font-mono">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Essaouira, Maroc
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            Consolidation approfondie des pipelines d'analyse de données, développement logiciel distribué, bases de données relationnelles et non relationnelles, mathématiques pour la data science.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: DUT EST El Kelaa -->
+      <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800 relative overflow-hidden group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold">
+            2023 - 2025
+          </span>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition">DUT - Ingénierie des Données</h3>
+          <div class="text-sm font-semibold text-emerald-400 mt-1">École Supérieure de Technologie (EST)</div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 mt-1 font-mono">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> El Kelâa des Sraghna, Maroc
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            Formation technique intensive : programmation C, Python, administration SQL, structures de données, statistiques appliquées et réalisation de projets d'intégration de fin d'études.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4: Bac Sciences Maths -->
+      <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800 relative overflow-hidden group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs font-semibold">
+            2023
+          </span>
+        </div>
+
+        <div class="mt-4">
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition">Baccalauréat - Sciences Mathématiques</h3>
+          <div class="text-sm font-semibold text-amber-400 mt-1">Lycée Hassan II</div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 mt-1 font-mono">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Safi, Maroc
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            Filière d'excellence mathématique marocaine réputée pour sa rigueur d'analyse, son raisonnement logique abstrait et sa solide formation en algèbre, analyse et physique.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Languages & Transversal Soft Skills -->
+    <div class="mt-12 glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Languages -->
+        <div>
+          <div class="flex items-center gap-2.5 text-white font-bold text-lg mb-4">
+            <i data-lucide="languages" class="w-5 h-5 text-primary-400"></i>
+            <span>Langues Maîtrisées</span>
+          </div>
+          <div class="space-y-3 font-mono text-xs">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-slate-200 font-semibold">Français</span>
+              <span class="px-2.5 py-1 rounded bg-sky-500/10 border border-sky-500/20 text-sky-400 font-bold">Avancé (Certification DELF B2)</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-slate-200 font-semibold">Arabe</span>
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold">Langue Maternelle</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-slate-200 font-semibold">Anglais</span>
+              <span class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-bold">Intermédiaire Professionnel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills & Strategy -->
+        <div>
+          <div class="flex items-center gap-2.5 text-white font-bold text-lg mb-4">
+            <i data-lucide="target" class="w-5 h-5 text-indigo-400"></i>
+            <span>Compétences Transversales & Stratégiques</span>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Analyse SWOT & PESTEL</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">5 Forces de Porter</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Rédaction User Stories</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Méthodes Agiles & Scrum</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Études Financières & ROI</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Veille Technologique IA</span>
+            <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-300">Rigueur & Autonomie Complète</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & CALL TO ACTION SECTION ================= -->
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10 relative">
+    <div class="rounded-3xl border border-slate-800 bg-gradient-to-b from-[#0f172a] via-[#090d16] to-[#090d16] p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Left Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gradient-badge text-xs font-mono text-primary-300">
+            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+            <span data-i18n="contact.badge">Prise de Contact</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight" data-i18n="contact.title">
+            Discutons d'un projet ou d'une <span class="gradient-text">opportunité d'ingénieur</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="contact.subtitle">
+            Je suis disponible pour des opportunités de stage PFE, CDI ou missions d'ingénierie en Data Science, IA et développement Full-Stack. N'hésitez pas à me contacter directement.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            
+            <!-- Email Item with Copy Button -->
+            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 group hover:border-primary-500/40 transition">
+              <a href="mailto:benhaimoud20@gmail.com" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Adresse E-mail</div>
+                  <div class="text-xs sm:text-sm font-semibold text-white group-hover:text-primary-300 transition">benhaimoud20@gmail.com</div>
+                </div>
+              </a>
+              <button onclick="copyToClipboard('benhaimoud20@gmail.com', 'E-mail copié dans le presse-papiers !')" class="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition" title="Copier l'email">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Phone / WhatsApp Item -->
+            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 group hover:border-emerald-500/40 transition">
+              <a href="https://wa.me/212771364141" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] font-mono text-slate-400 uppercase">Téléphone & WhatsApp</div>
+                  <div class="text-xs sm:text-sm font-semibold text-white group-hover:text-emerald-300 transition">+212 771 364141</div>
+                </div>
+              </a>
+              <a href="https://wa.me/212771364141" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition" title="Ouvrir WhatsApp">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- LinkedIn & GitHub Row -->
+            <div class="grid grid-cols-2 gap-3">
+              <a href="https://linkedin.com/in/yahyabenhaimoud" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-[10px] font-mono text-slate-400">LinkedIn</div>
+                  <div class="text-xs font-semibold text-white truncate">@Yahya benhaimoud</div>
+                </div>
+              </a>
+
+              <a href="https://github.com/Yahyaben50" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/40 transition flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-[10px] font-mono text-slate-400">GitHub</div>
+                  <div class="text-xs font-semibold text-white truncate">Yahyaben50</div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Right Interactive Form -->
+        <div class="lg:col-span-7 bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800 relative">
+          <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-mono text-slate-300 mb-1.5">Votre Nom / Entreprise *</label>
+                <input type="text" id="contact-name" required placeholder="ex: Safran, OCP, RH Recruteur" class="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary-400 transition">
+              </div>
+
+              <div>
+                <label for="contact-email" class="block text-xs font-mono text-slate-300 mb-1.5">Votre E-mail Professionnel *</label>
+                <input type="email" id="contact-email" required placeholder="recrutement@societe.com" class="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary-400 transition">
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-subject" class="block text-xs font-mono text-slate-300 mb-1.5">Objet du message</label>
+              <select id="contact-subject" class="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-slate-800 text-sm text-white focus:outline-none focus:border-primary-400 transition">
+                <option value="Proposition de Stage PFE / Ingénieur">Proposition de Stage PFE / Ingénieur Data & IA</option>
+                <option value="Opportunité d'embauche / CDI">Opportunité d'embauche / CDI</option>
+                <option value="Collaboration sur un projet technique">Collaboration sur un projet technique</option>
+                <option value="Demande d'entretien ou d'informations">Demande d'entretien ou d'informations</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contact-message" class="block text-xs font-mono text-slate-300 mb-1.5">Votre Message *</label>
+              <textarea id="contact-message" rows="4" required placeholder="Bonjour Yahya, nous avons examiné votre profil et souhaitons échanger avec vous concernant une opportunité..." class="w-full px-4 py-2.5 rounded-xl bg-black/50 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary-400 transition"></textarea>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
+              <button type="submit" class="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-indigo-600 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Envoyer le message</span>
+              </button>
+
+              <a href="https://wa.me/212771364141" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 font-medium text-xs transition flex items-center gap-2">
+                <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+                <span>Discussion rapide WhatsApp</span>
+              </a>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-800/80 bg-[#060911] py-10 px-4 sm:px-6 lg:px-8 z-10 relative text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-500/30 flex items-center justify-center font-mono font-bold text-primary-400 text-sm">
+          YB
+        </div>
+        <div>
+          <span class="text-slate-200 font-semibold">Yahya Benhaimoud</span> • Futur Ingénieur Data Science & IA
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 font-mono text-xs">
+        <a href="#hero" class="hover:text-primary-400 transition">Haut de page ↑</a>
+        <a href="CV_Benhaimoud_Yahya.pdf" download class="hover:text-primary-400 transition">Télécharger CV (PDF)</a>
+        <a href="https://github.com/Yahyaben50" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition">GitHub</a>
+        <a href="https://linkedin.com/in/yahyabenhaimoud" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition">LinkedIn</a>
+      </div>
+
+      <div class="text-slate-500 text-[11px] text-center sm:text-right">
+        Conçu avec rigueur et passion • 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 px-4 py-3 rounded-xl bg-slate-900 border border-primary-500/50 shadow-xl shadow-primary-500/20 text-white text-xs font-mono flex items-center gap-2.5">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+
+  <!-- ================= UNIVERSAL VIDEO MODAL ================= -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-all">
+    <div class="glass-card max-w-4xl w-full rounded-3xl border border-slate-700 p-6 sm:p-8 space-y-4 relative shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center gap-3">
+          <div id="video-modal-icon-box" class="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
+            <i data-lucide="play" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 id="video-modal-title" class="text-xl font-bold text-white">Démonstration Vidéo</h3>
+            <div id="video-modal-subtitle" class="text-xs font-mono text-slate-400">Présentation du projet</div>
+          </div>
+        </div>
+        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-black border border-slate-800 aspect-video flex items-center justify-center relative">
+        <video id="player-video" controls class="w-full h-full object-contain">
+          <source id="video-source" src="" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo HTML5.
+        </video>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-400 font-mono pt-2">
+        <span id="video-modal-project-tag">Projet</span>
+        <button onclick="closeVideoModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white transition font-sans text-xs">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= IMAGE LIGHTBOX MODAL ================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/95 backdrop-blur-lg transition-all">
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" class="absolute top-5 right-5 p-3 rounded-2xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition z-20">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Prev Button -->
+    <button onclick="prevLightboxImage()" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-2xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition z-20">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Next Button -->
+    <button onclick="nextLightboxImage()" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-2xl bg-slate-900/80 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition z-20">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Lightbox Main Content -->
+    <div class="max-w-5xl w-full flex flex-col items-center justify-center space-y-4">
+      <div class="relative max-h-[75vh] w-full flex items-center justify-center overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/70 p-2">
+        <img id="lightbox-img" src="" alt="Capture plein écran" class="max-h-[72vh] max-w-full object-contain rounded-xl shadow-2xl transition duration-300"/>
+      </div>
+      
+      <!-- Caption / Info -->
+      <div class="flex flex-col sm:flex-row items-center justify-between w-full px-4 text-xs font-mono text-slate-300 gap-2">
+        <div class="flex items-center gap-2">
+          <span id="lightbox-project-badge" class="px-2.5 py-1 rounded-md bg-primary-500/20 text-primary-300 border border-primary-500/30">Projet</span>
+          <span id="lightbox-title" class="text-white font-sans font-semibold">Titre de la photo</span>
+        </div>
+        <div class="flex items-center gap-3 text-slate-400">
+          <span id="lightbox-counter">1 / 1</span>
+          <span class="text-[11px] text-slate-500">Utilisez ← → ou cliquez pour naviguer</span>
+        </div>
+      </div>
+
+      <!-- Thumbnail bar -->
+      <div id="lightbox-thumbs" class="flex gap-2 max-w-full overflow-x-auto py-2 px-1">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+    <!-- ================= PROJECT DETAILS MODAL ================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all">
+    <div class="glass-card max-w-2xl w-full rounded-3xl border border-slate-700 max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative" id="modal-content">
+      <!-- Close Button -->
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modal-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Interactive Starfield / Particle Background
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = [];
+    for (let i = 0; i < 40; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 1.5 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        alpha: Math.random() * 0.6 + 0.2
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      for (let p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // 2. Typewriter Effect in Hero
+    const roles = [
+      "Futur Ingénieur Data Science & IA (EMSI)",
+      "Spécialiste Data Science & IA (EMSI)",
+      "Spécialiste Machine Learning & Digital Twin",
+      "Concepteur de Solutions Métier (SAFRAN, OCP)"
+    ];
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typewriterElem = document.getElementById('typewriter');
+
+    function typeWriterLoop() {
+      const currentRole = roles[roleIdx];
+      if (isDeleting) {
+        typewriterElem.textContent = currentRole.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typewriterElem.textContent = currentRole.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let speed = isDeleting ? 30 : 60;
+      if (!isDeleting && charIdx === currentRole.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        speed = 400;
+      }
+      setTimeout(typeWriterLoop, speed);
+    }
+    typeWriterLoop();
+
+    // 3. Mobile Navigation Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 4. Project Filters
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'border-primary-500', 'bg-primary-500/20', 'text-primary-300');
+          b.classList.add('border-slate-800', 'bg-slate-900/60', 'text-slate-400');
+        });
+        btn.classList.add('active', 'border-primary-500', 'bg-primary-500/20', 'text-primary-300');
+        btn.classList.remove('border-slate-800', 'bg-slate-900/60', 'text-slate-400');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 5. Skill Search Filter
+    const skillInput = document.getElementById('skill-search-input');
+    const skillBoxes = document.querySelectorAll('.skill-box');
+
+    skillInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      skillBoxes.forEach(box => {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(query)) {
+          box.style.display = 'block';
+        } else {
+          box.style.display = 'none';
+        }
+      });
+    });
+
+    // 6. Interactive AI & Digital Twin Simulator Logic
+    const tempInput = document.getElementById('input-temp');
+    const vibInput = document.getElementById('input-vib');
+    const rpmInput = document.getElementById('input-rpm');
+    const hoursInput = document.getElementById('input-hours');
+
+    const tempVal = document.getElementById('temp-val');
+    const vibVal = document.getElementById('vib-val');
+    const rpmVal = document.getElementById('rpm-val');
+    const hoursVal = document.getElementById('hours-val');
+
+    const metricHealth = document.getElementById('metric-health');
+    const metricRisk = document.getElementById('metric-risk');
+    const metricOee = document.getElementById('metric-oee');
+
+    const statusCard = document.getElementById('status-card');
+    const statusIcon = document.getElementById('status-icon');
+    const statusBadge = document.getElementById('status-badge');
+    const statusRecommendation = document.getElementById('status-recommendation');
+
+    // Chart.js Telemetry Graph
+    const chartCtx = document.getElementById('telemetryChart').getContext('2d');
+    const chartLabels = ['T-50s', 'T-40s', 'T-30s', 'T-20s', 'T-10s', 'Temps Réel'];
+    const telemetryChart = new Chart(chartCtx, {
+      type: 'line',
+      data: {
+        labels: chartLabels,
+        datasets: [
+          {
+            label: 'Vibrations (mm/s)',
+            data: [2.1, 2.3, 2.2, 2.4, 2.3, 2.4],
+            borderColor: '#38bdf8',
+            backgroundColor: 'rgba(56, 189, 248, 0.1)',
+            tension: 0.4,
+            borderWidth: 2,
+            pointRadius: 3,
+            fill: true
+          },
+          {
+            label: 'Température (°C / 10)',
+            data: [6.5, 6.7, 6.6, 6.8, 6.7, 6.8],
+            borderColor: '#f59e0b',
+            backgroundColor: 'transparent',
+            tension: 0.4,
+            borderWidth: 2,
+            borderDash: [4, 4],
+            pointRadius: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: { color: '#94a3b8', font: { family: 'JetBrains Mono', size: 10 } }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } },
+            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+          },
+          y: {
+            ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } },
+            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+          }
+        }
+      }
+    });
+
+    function calculateMLInference() {
+      const T = parseFloat(tempInput.value);
+      const V = parseFloat(vibInput.value);
+      const RPM = parseFloat(rpmInput.value);
+      const H = parseFloat(hoursInput.value);
+
+      tempVal.textContent = T + ' °C';
+      vibVal.textContent = V + ' mm/s';
+      rpmVal.textContent = RPM + ' RPM';
+      hoursVal.textContent = H + ' h';
+
+      // Simulated Machine Learning scoring (XGBoost formula approximation)
+      // Penalties based on exceeding normal bounds
+      let tempPenalty = Math.max(0, (T - 75) * 1.5);
+      let vibPenalty = Math.max(0, (V - 3.0) * 8.5);
+      let rpmPenalty = Math.max(0, (RPM - 3200) * 0.03);
+      let hoursPenalty = Math.max(0, (H - 300) * 0.08);
+
+      let riskScore = (tempPenalty * 0.35 + vibPenalty * 0.40 + rpmPenalty * 0.15 + hoursPenalty * 0.10);
+      let failureProb = Math.min(99.4, Math.max(2.1, riskScore)).toFixed(1);
+      let healthScore = Math.max(5.0, (100 - failureProb * 1.05)).toFixed(0);
+      let oeeScore = Math.max(12.0, (94 - failureProb * 0.75)).toFixed(1);
+
+      metricRisk.textContent = failureProb + '%';
+      metricHealth.textContent = healthScore + '%';
+      metricOee.textContent = oeeScore + '%';
+
+      // Update Chart Realtime Value
+      telemetryChart.data.datasets[0].data[5] = V;
+      telemetryChart.data.datasets[1].data[5] = (T / 10).toFixed(1);
+      telemetryChart.update();
+
+      // Update Card State (Normal / Warning / Critical)
+      if (failureProb < 20) {
+        metricHealth.className = "text-3xl font-extrabold text-emerald-400 mt-1 font-mono";
+        metricRisk.className = "text-3xl font-extrabold text-sky-400 mt-1 font-mono";
+        statusCard.className = "p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex items-start gap-3.5 transition-all";
+        statusIcon.className = "p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5";
+        statusIcon.innerHTML = '<i data-lucide="shield-check" class="w-5 h-5"></i>';
+        statusBadge.className = "px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-emerald-500/20 text-emerald-300";
+        statusBadge.textContent = "STATUT : FONCTIONNEMENT NOMINAL";
+        statusRecommendation.textContent = "Tous les paramètres de télémétrie sont stables. Taux d'usure minimal. Aucun risque identifié par l'algorithme.";
+      } else if (failureProb < 55) {
+        metricHealth.className = "text-3xl font-extrabold text-amber-400 mt-1 font-mono";
+        metricRisk.className = "text-3xl font-extrabold text-amber-400 mt-1 font-mono";
+        statusCard.className = "p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex items-start gap-3.5 transition-all";
+        statusIcon.className = "p-2.5 rounded-xl bg-amber-500/20 text-amber-400 shrink-0 mt-0.5";
+        statusIcon.innerHTML = '<i data-lucide="alert-triangle" class="w-5 h-5"></i>';
+        statusBadge.className = "px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-amber-500/20 text-amber-300";
+        statusBadge.textContent = "ALERTE : ANOMALIE VIBRATOIRE DÉTECTÉE";
+        statusRecommendation.textContent = "Élévation modérée de la friction ou du régime machine. Recommandation : programmer une inspection préventive lors du prochain shift de maintenance.";
+      } else {
+        metricHealth.className = "text-3xl font-extrabold text-rose-400 mt-1 font-mono";
+        metricRisk.className = "text-3xl font-extrabold text-rose-400 mt-1 font-mono";
+        statusCard.className = "p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex items-start gap-3.5 transition-all";
+        statusIcon.className = "p-2.5 rounded-xl bg-rose-500/20 text-rose-400 shrink-0 mt-0.5";
+        statusIcon.innerHTML = '<i data-lucide="alert-octagon" class="w-5 h-5"></i>';
+        statusBadge.className = "px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-rose-500/20 text-rose-300";
+        statusBadge.textContent = "DANGER : RISQUE CRITIQUE DE CASSE IMMINENTE";
+        statusRecommendation.textContent = "Température ou harmoniques de vibrations excessives (>6 mm/s). Défaillance probable des roulements sous 12h. Déclenchement automatique de l'arrêt sécurisé recommandé.";
+      }
+      lucide.createIcons();
+    }
+
+    // Attach slider listeners
+    [tempInput, vibInput, rpmInput, hoursInput].forEach(slider => {
+      slider.addEventListener('input', calculateMLInference);
+    });
+
+    // Simulator presets
+    document.getElementById('preset-normal').addEventListener('click', () => {
+      tempInput.value = 65;
+      vibInput.value = 2.2;
+      rpmInput.value = 2800;
+      hoursInput.value = 120;
+      calculateMLInference();
+    });
+    document.getElementById('preset-warning').addEventListener('click', () => {
+      tempInput.value = 86;
+      vibInput.value = 4.8;
+      rpmInput.value = 3400;
+      hoursInput.value = 420;
+      calculateMLInference();
+    });
+    document.getElementById('preset-critical').addEventListener('click', () => {
+      tempInput.value = 108;
+      vibInput.value = 8.5;
+      rpmInput.value = 4100;
+      hoursInput.value = 650;
+      calculateMLInference();
+    });
+    document.getElementById('reset-sim-btn').addEventListener('click', () => {
+      tempInput.value = 68;
+      vibInput.value = 2.4;
+      rpmInput.value = 2850;
+      hoursInput.value = 140;
+      calculateMLInference();
+    });
+
+    // 7. Toast Notification Utility
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3500);
+    }
+
+    function copyToClipboard(text, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg);
+      }).catch(() => {
+        showToast("Texte copié : " + text);
+      });
+    }
+
+    // 8. Contact Form Handler (Direct Mailto / WhatsApp action)
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const subject = document.getElementById('contact-subject').value;
+      const message = document.getElementById('contact-message').value;
+
+      const fullBody = `Nom / Entreprise: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const mailtoLink = `mailto:benhaimoud20@gmail.com?subject=${encodeURIComponent(subject + " - " + name)}&body=${encodeURIComponent(fullBody)}`;
+      
+      window.location.href = mailtoLink;
+      showToast("Ouverture de votre client e-mail...");
+    }
+
+    // 9. Detailed Project Modals Data
+    const projectDetails = {
+      'safran': {
+        title: 'SAFRAN Padel Booking System',
+        org: 'SAFRAN Aircraft Engines Morocco',
+        role: 'Développeur Full-Stack (Autonomie Complète)',
+        year: '2026',
+        stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Google Sheets API', 'Nodemailer'],
+        desc: `Système complet de planification et de réservation de terrains de padel déployé pour SAFRAN Aircraft Engines Morocco. Conçu pour éliminer 100% des conflits d'horaires et fluidifier l'expérience des collaborateurs.`,
+        features: [
+          'Interface moderne et ultra fluide bâtie avec Next.js 16 et React 19',
+          'Calendrier interactif temps réel affichant les disponibilités sans rechargement de page',
+          'Intégration robuste avec Google Sheets API comme base de données cloud sécurisée',
+          'Génération dynamique de tickets de réservation PDF téléchargeables',
+          'Envoi automatisé de notifications par email SMTP (Nodemailer) aux responsables'
+        ],
+        impact: 'Réduction à zéro des conflits de réservation, adoption immédiate par le personnel SAFRAN, autonomie totale assurée de la conception au déploiement.'
+      },
+      'digital-twin': {
+        title: 'Plateforme Digital Twin & Maintenance Prédictive IA',
+        org: 'Coin Outils (Industrie)',
+        role: 'Stagiaire Data Science & Développeur IoT',
+        year: 'Avr. - Juin 2026',
+        stack: ['FastAPI', 'React.js', 'Python', 'XGBoost', 'Scikit-learn', 'Chart.js', 'jsPDF'],
+        desc: `Supervision temps réel de machines industrielles et anticipation des défaillances mécaniques via apprentissage automatique. Intègre un dashboard pour techniciens et responsables de maintenance.`,
+        features: [
+          'Entraînement de modèles XGBoost et Scikit-learn pour la classification et prédiction de pannes',
+          'API REST FastAPI orchestrant le streaming des télémétries et les inférences ML',
+          'Tableaux de bord d\'efficacité OEE/TRS (Taux de Rendement Synthétique)',
+          'Analyse par shift de travail et historique des alarmes',
+          'Module d\'export automatique de rapports PDF opérationnels pour les techniciens (jsPDF)'
+        ],
+        impact: 'Gain de réactivité sur les maintenances préventives et calcul automatisé des indicateurs industriels clés.'
+      },
+      'ocp': {
+        title: 'Analyse & Visualisation des Données de Production OCP',
+        org: 'Office Chérifien des Phosphates (OCP)',
+        role: 'Stagiaire Technicien Données & Full-Stack',
+        year: 'Avr. - Juin 2025',
+        stack: ['Python', 'Pandas', 'Power BI', 'DAX', 'Jupyter', 'Full-Stack Web'],
+        desc: `Mission stratégique d'optimisation de la consommation de soufre au sein du complexe industriel OCP à Safi. Analyse volumineuse de données d'ateliers et restitution visuelle décisionnelle.`,
+        features: [
+          'Pipelines de nettoyage et de préparation de données massives (Python, Pandas)',
+          'Conception de dashboards décisionnels interactifs avec mesures DAX personnalisées',
+          'Suivi continu du TRG (Taux de Rendement Global) et des causes de ralentissement',
+          'Application web centralisant les flux de reporting internes',
+          'Suppression des saisies manuelles redondantes sous Excel'
+        ],
+        impact: 'Optimisation de la consommation matière première et accélération du processus de reporting de direction.'
+      },
+      'iot-home': {
+        title: 'Maison Connectée & Intelligente (Projet de Fin d\'Études)',
+        org: 'Projet Académique & Hardware',
+        role: 'Concepteur Systèmes Embarqués & Développeur Web',
+        year: '2025',
+        stack: ['Arduino', 'ESP32', 'Capteurs DHT11', 'Capteurs MQ-7/MQ-2', 'Node.js', 'React.js'],
+        desc: `Architecture domotique complète de bout en bout reliant microcontrôleurs physiques, capteurs environnementaux et interface web de contrôle à distance.`,
+        features: [
+          'Contrôle à distance de l\'éclairage et motorisation de porte de garage',
+          'Surveillance continue de température, humidité et détection de gaz toxiques/fumées',
+          'Serveur Node.js / Express centralisant les flux de données IoT',
+          'Interface React.js réactive affichant l\'état de la maison en temps réel'
+        ],
+        impact: 'Démonstration réussie de l\'intégration matérielle et logicielle pour des applications Smart Home fiables.'
+      },
+      'bmw': {
+        title: 'Analyse des Ventes BMW (2018-2025)',
+        org: 'Projet Data Analytics',
+        role: 'Data Analyst & Concepteur BI',
+        year: '2025',
+        stack: ['Python (Pandas, NumPy)', 'Power BI', 'DAX', 'Visualisation Statistique'],
+        desc: `Étude exploratoire de données (EDA) sur les ventes internationales de véhicules BMW sur une période de 7 ans afin d'identifier les segments de croissance et orienter la stratégie commerciale.`,
+        features: [
+          'Nettoyage et structuration de données multivariées avec Pandas',
+          'Détection des tendances de motorisation (électrique, hybride, thermique)',
+          'Tableaux de bord dynamiques Power BI avec filtres multi-axes',
+          'Création d\'indicateurs clés de rentabilité par région et modèle'
+        ],
+        impact: 'Mise en lumière claire des leviers de croissance commerciale et de l\'évolution de la demande.'
+      },
+      'product': {
+        title: 'Analyse Stratégique & Data Scraping Produit',
+        org: 'Applications Digitales & E-Commerce',
+        role: 'Product Manager & Data Scraper',
+        year: '2024 - 2025',
+        stack: ['BeautifulSoup', 'Python', 'SWOT', '5 Forces de Porter', 'PESTEL', 'User Stories'],
+        desc: `Analyses fonctionnelles approfondies pour des applications digitales (RAMADAN HALAL, APK Dropshipping) enrichies par la collecte de données marché via web scraping.`,
+        features: [
+          'Scripts de scraping automatisés avec BeautifulSoup pour analyser la concurrence',
+          'Matrices stratégiques complètes : SWOT, PESTEL, Porter, Benchmark UX',
+          'Rédaction de User Stories claires et critères d\'acceptation Agile',
+          'Recommandations ergonomiques pour l\'optimisation du taux de conversion'
+        ],
+        impact: 'Cadrage précis des besoins utilisateurs et réduction du time-to-market.'
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectDetails[key];
+      if (!data) return;
+      const modal = document.getElementById('project-modal');
+      const body = document.getElementById('modal-body');
+
+      let stackBadges = data.stack.map(s => `<span class="px-2.5 py-1 rounded-lg bg-slate-800 text-sky-300 text-xs font-mono border border-slate-700">${s}</span>`).join(' ');
+      let featuresList = data.features.map(f => `<li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i><span>${f}</span></li>`).join('');
+
+      body.innerHTML = `
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-mono">
+            ${data.org} • ${data.year}
+          </div>
+          <h3 class="text-2xl font-bold text-white">${data.title}</h3>
+          <div class="text-xs font-semibold text-slate-400 font-mono">${data.role}</div>
+          
+          <p class="text-slate-300 text-sm leading-relaxed">${data.desc}</p>
+          
+          <div>
+            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">Technologies Mobilisées :</div>
+            <div class="flex flex-wrap gap-2">${stackBadges}</div>
+          </div>
+
+          <div class="pt-2">
+            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">Points Clés & Fonctionnalités :</div>
+            <ul class="space-y-2">${featuresList}</ul>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
+            <strong class="text-white font-mono">Impact & Résultats :</strong> ${data.impact}
+          </div>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('project-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'project-modal') closeProjectModal();
+    });
+
+    // 10. Multi-Language Switcher (FR / EN)
+    let currentLang = 'FR';
+    const translations = {
+      'FR': {
+        'nav.about': 'À propos',
+        'nav.experience': 'Expériences',
+        'nav.projects': 'Projets',
+        'nav.demo': 'Démo IA Live',
+        'nav.skills': 'Compétences',
+        'nav.education': 'Formation',
+        'nav.contact': 'Contact',
+        'nav.downloadCv': 'Télécharger CV',
+        'hero.status': 'Recherche Stage PFE & Opportunités Ingénieur 2026',
+        'hero.btnProjects': 'Explorer mes réalisations',
+        'hero.btnCv': 'Curriculum Vitae (PDF)',
+        'hero.btnContact': 'Me contacter',
+        'stats.exp': 'Expériences Industrielles',
+        'stats.autonomy': 'Autonomie Full-Stack & ML',
+        'stats.tech': 'Technologies Maîtrisées',
+        'stats.school': 'Cycle Ingénieur d\'Excellence',
+        'about.badge': 'Profil & Vision',
+        'about.title': 'Transformer la donnée brute en levier décisionnel & produits concrets',
+        'about.subtitle': 'Une combinaison rare d\'expertise en Machine Learning / Analyse Prédictive et de rigueur en Ingénierie Logicielle moderne.',
+        'exp.badge': 'Parcours & Missions',
+        'exp.title': 'Expériences Professionnelles & Industrielles',
+        'exp.subtitle': 'Des réalisations tangibles au sein de leaders aéronautiques, industriels et institutionnels.',
+        'projects.badge': 'Portfolio Technique',
+        'projects.title': 'Projets Phares & Réalisations Concrètes',
+        'projects.subtitle': 'Des projets alliant rigueur algorithmique, systèmes embarqués connectés et interfaces web d\'entreprise.',
+        'skills.badge': 'Expertise & Outils',
+        'skills.title': 'Compétences Techniques & Méthodologiques',
+        'skills.subtitle': 'Un ensemble cohérent de compétences orientées vers la création de valeur et l\'industrialisation.',
+        'edu.badge': 'Formation Académique',
+        'edu.title': 'Parcours Universitaire & Grandes Écoles',
+        'edu.subtitle': 'Une progression rigoureuse : du Baccalauréat Sciences Mathématiques jusqu\'au Cycle d\'Ingénieur en Data Science & IA.',
+        'contact.badge': 'Prise de Contact',
+        'contact.title': 'Discutons d\'un projet ou d\'une opportunité d\'ingénieur',
+        'contact.subtitle': 'Je suis disponible pour des opportunités de stage PFE, CDI ou missions d\'ingénierie en Data Science, IA et développement Full-Stack.'
+      },
+      'EN': {
+        'nav.about': 'About',
+        'nav.experience': 'Experience',
+        'nav.projects': 'Projects',
+        'nav.demo': 'Live AI Demo',
+        'nav.skills': 'Skills',
+        'nav.education': 'Education',
+        'nav.contact': 'Contact',
+        'nav.downloadCv': 'Download Resume',
+        'hero.status': 'Seeking Engineering Internship / Opportunities 2026',
+        'hero.btnProjects': 'Explore Projects',
+        'hero.btnCv': 'Resume (PDF)',
+        'hero.btnContact': 'Get in Touch',
+        'stats.exp': 'Industrial Experiences',
+        'stats.autonomy': 'Full-Stack & ML Autonomy',
+        'stats.tech': 'Mastered Technologies',
+        'stats.school': 'Top Engineering School',
+        'about.badge': 'Profile & Vision',
+        'about.title': 'Transforming Raw Data into Actionable Insights & Real Products',
+        'about.subtitle': 'A powerful combination of Machine Learning / Predictive Analytics expertise and modern Full-Stack Software Engineering.',
+        'exp.badge': 'Career & Missions',
+        'exp.title': 'Professional & Industrial Experience',
+        'exp.subtitle': 'Tangible impact delivered at aeronautics, industrial, and institutional leaders.',
+        'projects.badge': 'Technical Portfolio',
+        'projects.title': 'Flagship Projects & Key Deliverables',
+        'projects.subtitle': 'Projects bridging algorithmic modeling, connected IoT hardware, and high-performance web applications.',
+        'skills.badge': 'Expertise & Tools',
+        'skills.title': 'Technical & Methodological Skills',
+        'skills.subtitle': 'A coherent stack designed for rapid value creation and production delivery.',
+        'edu.badge': 'Academic Path',
+        'edu.title': 'Academic Background & Engineering Degree',
+        'edu.subtitle': 'A rigorous journey: from Mathematical Sciences Baccalaureate to Data Science & AI Engineering Degree.',
+        'contact.badge': 'Get In Touch',
+        'contact.title': 'Let\'s Discuss Opportunities & High-Impact Projects',
+        'contact.subtitle': 'Open to final-year engineering internships, graduate positions, and full-stack data/AI opportunities.'
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'FR' ? 'EN' : 'FR';
+      document.getElementById('current-lang-text').textContent = currentLang;
+      const mobileLang = document.getElementById('mobile-lang-text');
+      if (mobileLang) mobileLang.textContent = currentLang === 'FR' ? 'Français' : 'English';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+        }
+      });
+      showToast(currentLang === 'FR' ? 'Langue changée en Français' : 'Language switched to English');
+    }
+
+    document.getElementById('lang-toggle-btn').addEventListener('click', toggleLanguage);
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+    if (mobileLangToggle) mobileLangToggle.addEventListener('click', toggleLanguage);
+
+    // Initial calculation for AI simulator
+    calculateMLInference();
+
+    // === Slideshows & Media Handlers pour cartes projets ===
+    let safranIdx = 0, dtIdx = 0, ocpIdx = 0, shIdx = 0, bmwIdx = 0;
+
+    // Project Gallery Definitions for Full-Screen Lightbox View
+    const projectGalleries = {
+      'safran': {
+        title: "SAFRAN Padel Booking System",
+        badge: "Freelance • SAFRAN",
+        images: [
+          { src: "safran/safran_1.png", label: "Page de réservation avec sélection des créneaux en temps réel" },
+          { src: "safran/safran_2.png", label: "Formulaire de confirmation et gestion des partenaires" },
+          { src: "safran/safran_3.png", label: "Ticket de réservation PDF généré et détails du match" },
+          { src: "safran/reservation_email.jpeg", label: "Email automatique de notification et confirmation de réservation envoyé aux joueurs" }
+        ]
+      },
+      'digital-twin': {
+        title: "Plateforme Digital Twin & Maintenance Prédictive IA",
+        badge: "Industrie 4.0 • Coin Outils",
+        images: [
+          { src: "digital_twin/dt_app_1.png", label: "Tableau de bord de supervision temps réel du TRS & état machines" },
+          { src: "digital_twin/dt_app_2.png", label: "Monitoring prédictif avec jumeau numérique et détection d'anomalies" },
+          { src: "digital_twin/dt_app_3.png", label: "Panneau technicien & historique des interventions de maintenance" },
+          { src: "digital_twin/dt_app_4.png", label: "Module d'analyse prédictive et alertes pannes imminentes" },
+          { src: "digital_twin/confusion_matrices.png", label: "Évaluation ML : Matrices de confusion (XGBoost, Random Forest, Logistic Regression)" },
+          { src: "digital_twin/feature_importance.png", label: "Importance des variables capteurs dans la prédiction de panne" },
+          { src: "digital_twin/model_comparison.png", label: "Comparaison globale des métriques (Accuracy, F1-score, Recall, ROC-AUC)" },
+          { src: "digital_twin/roc_curves.png", label: "Courbes ROC des différents algorithmes d'apprentissage automatique" },
+          { src: "digital_twin/learning_curves.png", label: "Courbes d'apprentissage montrant l'absence d'overfitting" }
+        ]
+      },
+      'ocp': {
+        title: "Analyse Données de Production OCP",
+        badge: "Industrie Lourde • OCP",
+        images: [
+          { src: "stage%20ocp/ocp_1.png", label: "Page d'accueil du tableau de bord de production & engagement environnemental" },
+          { src: "stage%20ocp/ocp_2.png", label: "Indicateurs de performance de la ligne de production PS3" },
+          { src: "stage%20ocp/ocp_3.png", label: "Suivi détaillé de la ligne PS4 et consommation de soufre" },
+          { src: "stage%20ocp/ocp_4.png", label: "Analyse approfondie des arrêts machines et TRS / TRG global" }
+        ]
+      },
+      'iot-home': {
+        title: "Maison Connectée & Intelligente IoT (PFE)",
+        badge: "Projet PFE • IoT & Embedded",
+        images: [
+          { src: "smarthome/smarthome_1.png", label: "Banc d'essai prototype physique complet avec commande via interface web" },
+          { src: "smarthome/smarthome_2.png", label: "Démonstration du contrôle d'éclairage et capteurs en direct" },
+          { src: "smarthome/smarthome_3.png", label: "Tableau de bord React : télémétrie température, humidité & alertes gaz" },
+          { src: "smarthome/smarthome_4.png", label: "Simulation domotique avec microcontrôleurs ESP32 & Arduino" }
+        ]
+      },
+      'bmw': {
+        title: "Analyse des Ventes BMW (2018-2025)",
+        badge: "Business Intelligence & EDA",
+        images: [
+          { src: "bmw_sales/bmw_1.png", label: "Dashboard général des ventes mondiales, chiffre d'affaires et volumes" },
+          { src: "bmw_sales/bmw_2.png", label: "Analyse par modèle de véhicule, motorisation électrique et rentabilité" },
+          { src: "bmw_sales/bmw_3.png", label: "Évolution trimestrielle et comparaison des performances régionales" }
+        ]
+      }
+    };
+
+    function goSafranSlide(n) {
+      const imgs = document.querySelectorAll('.safran-img');
+      const dots = document.querySelectorAll('.safran-dot');
+      if (!imgs.length) return;
+      imgs.forEach((img, i) => img.style.display = i === n ? 'block' : 'none');
+      dots.forEach((d, i) => { 
+        d.style.opacity = i === n ? '1' : '0.4'; 
+        d.style.width = i === n ? '12px' : '6px'; 
+      });
+      safranIdx = n;
+    }
+
+    function goDtSlide(n) {
+      const imgs = document.querySelectorAll('.dt-img');
+      const dots = document.querySelectorAll('.dt-dot');
+      if (!imgs.length) return;
+      imgs.forEach((img, i) => img.style.display = i === n ? 'block' : 'none');
+      dots.forEach((d, i) => { 
+        d.style.opacity = i === n ? '1' : '0.4'; 
+        d.style.width = i === n ? '12px' : '6px'; 
+      });
+      dtIdx = n;
+    }
+
+    function goOcpSlide(n) {
+      const imgs = document.querySelectorAll('.ocp-img');
+      const dots = document.querySelectorAll('.ocp-dot');
+      if (!imgs.length) return;
+      imgs.forEach((img, i) => img.style.display = i === n ? 'block' : 'none');
+      dots.forEach((d, i) => { 
+        d.style.opacity = i === n ? '1' : '0.4'; 
+        d.style.width = i === n ? '12px' : '6px'; 
+      });
+      ocpIdx = n;
+    }
+
+    function goShSlide(n) {
+      const imgs = document.querySelectorAll('.sh-img');
+      const dots = document.querySelectorAll('.sh-dot');
+      if (!imgs.length) return;
+      imgs.forEach((img, i) => img.style.display = i === n ? 'block' : 'none');
+      dots.forEach((d, i) => { 
+        d.style.opacity = i === n ? '1' : '0.4'; 
+        d.style.width = i === n ? '12px' : '6px'; 
+      });
+      shIdx = n;
+    }
+
+    function goBmwSlide(n) {
+      const imgs = document.querySelectorAll('.bmw-img');
+      const dots = document.querySelectorAll('.bmw-dot');
+      if (!imgs.length) return;
+      imgs.forEach((img, i) => img.style.display = i === n ? 'block' : 'none');
+      dots.forEach((d, i) => { 
+        d.style.opacity = i === n ? '1' : '0.4'; 
+        d.style.width = i === n ? '12px' : '6px'; 
+      });
+      bmwIdx = n;
+    }
+
+    // Auto-slideshows with staggered timers
+    setInterval(() => {
+      const imgs = document.querySelectorAll('.safran-img');
+      if (imgs.length) goSafranSlide((safranIdx + 1) % imgs.length);
+    }, 3800);
+
+    setInterval(() => {
+      const imgs = document.querySelectorAll('.dt-img');
+      if (imgs.length) goDtSlide((dtIdx + 1) % imgs.length);
+    }, 4200);
+
+    setInterval(() => {
+      const imgs = document.querySelectorAll('.ocp-img');
+      if (imgs.length) goOcpSlide((ocpIdx + 1) % imgs.length);
+    }, 3500);
+
+    setInterval(() => {
+      const imgs = document.querySelectorAll('.sh-img');
+      if (imgs.length) goShSlide((shIdx + 1) % imgs.length);
+    }, 4000);
+
+    setInterval(() => {
+      const imgs = document.querySelectorAll('.bmw-img');
+      if (imgs.length) goBmwSlide((bmwIdx + 1) % imgs.length);
+    }, 4400);
+
+    // ================= DYNAMIC VIDEO MODAL =================
+    const videoConfigs = {
+      'digital-twin': {
+        src: "video_stage_digital_twin.mp4",
+        altSrc: "digital_twin/video_digital_twin.mp4",
+        title: "Démonstration Vidéo — Digital Twin & IA",
+        subtitle: "Supervision industrielle temps réel, calcul TRS & maintenance prédictive",
+        project: "Projet : Stage Digital Twin (Coin Outils)"
+      },
+      'smarthome': {
+        src: "video_smarthome.mp4",
+        altSrc: "smarthome/video_smarthome.mp4",
+        title: "Démonstration Vidéo — Maison Connectée IoT",
+        subtitle: "Système domotique complet de bout en bout (ESP32, capteurs & dashboard React)",
+        project: "Projet : Projet de Fin d'Études (Smart Home IoT)"
+      }
+    };
+
+    function openVideoModal(type) {
+      if (!type) type = 'digital-twin';
+      const config = videoConfigs[type] || videoConfigs['digital-twin'];
+      const modal = document.getElementById('video-modal');
+      const vid = document.getElementById('player-video');
+      const source = document.getElementById('video-source');
+      
+      document.getElementById('video-modal-title').textContent = config.title;
+      document.getElementById('video-modal-subtitle').textContent = config.subtitle;
+      document.getElementById('video-modal-project-tag').textContent = config.project;
+
+      source.src = config.src;
+      vid.load();
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      vid.play().catch(function() {
+        if (config.altSrc) {
+          source.src = config.altSrc;
+          vid.load();
+          vid.play().catch(function() {});
+        }
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const vid = document.getElementById('player-video');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      if (vid) vid.pause();
+    }
+
+    document.getElementById('video-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'video-modal') closeVideoModal();
+    });
+
+    // ================= LIGHTBOX GALLERY =================
+    let currentGalleryKey = null;
+    let currentImageIndex = 0;
+
+    function openGallery(key, initialIndex) {
+      if (typeof initialIndex !== 'number') initialIndex = 0;
+      const gallery = projectGalleries[key];
+      if (!gallery || !gallery.images.length) return;
+
+      currentGalleryKey = key;
+      currentImageIndex = initialIndex;
+
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      updateLightboxView();
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function updateLightboxView() {
+      const gallery = projectGalleries[currentGalleryKey];
+      if (!gallery) return;
+
+      const imgData = gallery.images[currentImageIndex];
+      const imgElem = document.getElementById('lightbox-img');
+      imgElem.src = imgData.src;
+      
+      document.getElementById('lightbox-project-badge').textContent = gallery.badge;
+      document.getElementById('lightbox-title').textContent = imgData.label;
+      document.getElementById('lightbox-counter').textContent = (currentImageIndex + 1) + ' / ' + gallery.images.length;
+
+      // Render thumbnail bar
+      const thumbsContainer = document.getElementById('lightbox-thumbs');
+      thumbsContainer.innerHTML = gallery.images.map((img, idx) => `
+        <button onclick="currentImageIndex = ${idx}; updateLightboxView()" class="relative shrink-0 w-14 h-10 rounded-lg overflow-hidden border-2 transition ${idx === currentImageIndex ? 'border-primary-400 scale-105 shadow-md shadow-primary-500/30' : 'border-slate-800 opacity-50 hover:opacity-100'}">
+          <img src="${img.src}" class="w-full h-full object-cover" alt="miniature"/>
+        </button>
+      `).join('');
+    }
+
+    function nextLightboxImage() {
+      const gallery = projectGalleries[currentGalleryKey];
+      if (!gallery) return;
+      currentImageIndex = (currentImageIndex + 1) % gallery.images.length;
+      updateLightboxView();
+    }
+
+    function prevLightboxImage() {
+      const gallery = projectGalleries[currentGalleryKey];
+      if (!gallery) return;
+      currentImageIndex = (currentImageIndex - 1 + gallery.images.length) % gallery.images.length;
+      updateLightboxView();
+    }
+
+    document.getElementById('lightbox-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox-modal') closeLightbox();
+    });
+
+    // Keyboard navigation for Lightbox & Modals
+    window.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox-modal');
+      const vm = document.getElementById('video-modal');
+      const pm = document.getElementById('project-modal');
+
+      if (e.key === 'Escape') {
+        if (lb && !lb.classList.contains('hidden')) closeLightbox();
+        if (vm && !vm.classList.contains('hidden')) closeVideoModal();
+        if (pm && !pm.classList.contains('hidden')) closeProjectModal();
+      } else if (lb && !lb.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight') nextLightboxImage();
+        if (e.key === 'ArrowLeft') prevLightboxImage();
+      }
+    });
+
+    // Enhance openProjectModal to include gallery and video shortcuts inside details modal
+    const originalOpenProjectModal = openProjectModal;
+    openProjectModal = function(key) {
+      originalOpenProjectModal(key);
+      const gallery = projectGalleries[key];
+      const body = document.getElementById('modal-body');
+      if (!body) return;
+
+      let mediaHtml = '';
+      if (key === 'digital-twin') {
+        mediaHtml += `
+          <div class="p-3.5 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-between">
+            <div class="flex items-center gap-2.5 text-xs text-indigo-300">
+              <i data-lucide="video" class="w-4 h-4 text-indigo-400"></i>
+              <span class="font-semibold">Démonstration vidéo du projet disponible</span>
+            </div>
+            <button onclick="closeProjectModal(); openVideoModal('digital-twin')" class="px-3.5 py-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-lg shadow-indigo-500/30">
+              <i data-lucide="play" class="w-3.5 h-3.5"></i>
+              <span>Lancer la vidéo</span>
+            </button>
+          </div>
+        `;
+      } else if (key === 'iot-home') {
+        mediaHtml += `
+          <div class="p-3.5 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-between">
+            <div class="flex items-center gap-2.5 text-xs text-purple-300">
+              <i data-lucide="video" class="w-4 h-4 text-purple-400"></i>
+              <span class="font-semibold">Démonstration vidéo du système Smart Home</span>
+            </div>
+            <button onclick="closeProjectModal(); openVideoModal('smarthome')" class="px-3.5 py-1.5 rounded-xl bg-purple-500 hover:bg-purple-600 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-lg shadow-purple-500/30">
+              <i data-lucide="play" class="w-3.5 h-3.5"></i>
+              <span>Lancer la vidéo</span>
+            </button>
+          </div>
+        `;
+      }
+
+      if (gallery && gallery.images.length) {
+        mediaHtml += `
+          <div class="space-y-2 pt-2 border-t border-slate-800">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold">Galerie photos & captures :</span>
+              <button onclick="openGallery('${key}', 0)" class="text-xs text-primary-400 hover:text-primary-300 font-mono flex items-center gap-1 transition">
+                <span>Agrandir plein écran</span>
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+              ${gallery.images.map((img, idx) => `
+                <div onclick="openGallery('${key}', ${idx})" class="group/thumb relative rounded-xl overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-primary-400 transition">
+                  <img src="${img.src}" class="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-300" alt="photo"/>
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 flex items-center justify-center transition">
+                    <i data-lucide="zoom-in" class="w-4 h-4 text-white"></i>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      if (mediaHtml) {
+        body.insertAdjacentHTML('beforeend', mediaHtml);
+        if (window.lucide) lucide.createIcons();
+      }
+    };
+
+    // Initialize all slides on DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      goSafranSlide(0);
+      goDtSlide(0);
+      goOcpSlide(0);
+      goShSlide(0);
+      goBmwSlide(0);
+    });
+  </script>
+</body>
+</html>
